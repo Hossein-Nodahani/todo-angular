@@ -1,0 +1,27 @@
+<div *ngIf="isLoading ; else dataContent">
+    <div class="loading">
+        <h4> loading ...</h4>
+    </div>
+</div>
+
+<ng-template #dataContent>
+    <div *ngIf="isFailToLoad ; else dataContent">
+        <h4> error !</h4>
+    </div>
+
+    <ng-template #dataContent>
+        <div *ngIf="users.length === 0 ; else showData">
+            no data !
+        </div>
+        <ng-template #showData>
+            <ul class="user-items">
+                <li *ngFor="let user of users" class="user-item">
+                    <a [routerLink]="['/users', user.id]">
+                        {{user.name}}
+                    </a>
+                </li>
+            </ul>
+        </ng-template>
+    </ng-template>
+</ng-template>
+

@@ -1,0 +1,38 @@
+.user-items{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.user-item{
+    width: 100%;
+    min-width: 400px;
+    max-width: 550px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px 32px;
+    margin-bottom: 8px;
+    border-radius: 2px;
+    background-color: rgb(226, 176, 115);
+    border-radius: 1rem;
+  }
+
+.user-item:hover {
+    background-color: rgb(223, 149, 59);
+}
+
+.user-item:hover a {
+    color: #fff;
+}
+
+.loading{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+  

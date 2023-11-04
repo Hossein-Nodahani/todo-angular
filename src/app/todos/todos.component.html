@@ -1,0 +1,19 @@
+<div *ngIf="isLoading ; else dataContent">
+    <h4> loading ...</h4>
+</div>
+
+<ng-template #dataContent>
+    <div *ngIf="isFailToLoad ; else dataContent">
+        <h4> error !</h4>
+    </div>
+
+    <ng-template #dataContent>
+        <div *ngIf="todos.length === 0 ; else showData">
+            no data !
+        </div>
+        <ng-template #showData>
+            <app-todo-item *ngFor="let todo of getVisibleTodos" [todo]="todo"></app-todo-item>
+        </ng-template>
+    </ng-template>
+</ng-template>
+

@@ -1,0 +1,21 @@
+<div *ngIf="isLoadingUsers ; else dataContent">
+        <h4> loading ...</h4>
+</div>
+
+<ng-template #dataContent>
+
+    <div *ngIf="isFailtoLoad ; else showData">
+        error !
+    </div>
+    
+    <ng-template #showData>
+        <div>
+            <p>name : {{user.name}}</p>
+            <p>username : @{{user.username}}</p>
+            <p>email : {{user.email}}</p>
+            <p>address : {{user.address.street}} srteet </p>
+            <a [routerLink]="['/todos', user.id]">see user todos</a>
+        </div>
+    </ng-template>  
+
+</ng-template>
